@@ -7,6 +7,8 @@ using System.Text;
 using System.Windows.Forms;
 using static obraz.PpmLoader;
 using static obraz.Negative;
+using static obraz.Greyscale;
+using System.Security.Cryptography.X509Certificates;
 
 namespace obraz
 {
@@ -99,6 +101,11 @@ namespace obraz
         {
             NegativeGrayscale.InvertGrayscaleImage(pictureBox1);
         }
-    }
+
+        private void GreyScaleToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new Greyscale(pictureBox1);
+        }
+        }
 }
 

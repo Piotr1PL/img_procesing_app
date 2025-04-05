@@ -35,9 +35,9 @@
             loadToolStripMenuItem = new ToolStripMenuItem();
             negativeGreyScaleToolStripMenuItem = new ToolStripMenuItem();
             negativeToolStripMenuItem = new ToolStripMenuItem();
+            negativegreyToolStripMenuItem = new ToolStripMenuItem();
             greyScaleToolStripMenuItem = new ToolStripMenuItem();
             pictureBox1 = new PictureBox();
-            negativegreyToolStripMenuItem = new ToolStripMenuItem();
             menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
@@ -88,11 +88,19 @@
             negativeToolStripMenuItem.Text = "Negative";
             negativeToolStripMenuItem.Click += NegativeToolStripMenuItem_Click;
             // 
+            // negativegreyToolStripMenuItem
+            // 
+            negativegreyToolStripMenuItem.Name = "negativegreyToolStripMenuItem";
+            negativegreyToolStripMenuItem.Size = new Size(270, 34);
+            negativegreyToolStripMenuItem.Text = "Negativegrey";
+            negativegreyToolStripMenuItem.Click += NegativegreyToolStripMenuItem_Click;
+            // 
             // greyScaleToolStripMenuItem
             // 
             greyScaleToolStripMenuItem.Name = "greyScaleToolStripMenuItem";
             greyScaleToolStripMenuItem.Size = new Size(270, 34);
             greyScaleToolStripMenuItem.Text = "GreyScale";
+            greyScaleToolStripMenuItem.Click += GreyScaleToolStripMenuItem_Click;
             // 
             // pictureBox1
             // 
@@ -103,13 +111,6 @@
             pictureBox1.TabIndex = 1;
             pictureBox1.TabStop = false;
             pictureBox1.Click += PictureBox1_Click;
-            // 
-            // negativegreyToolStripMenuItem
-            // 
-            negativegreyToolStripMenuItem.Name = "negativegreyToolStripMenuItem";
-            negativegreyToolStripMenuItem.Size = new Size(270, 34);
-            negativegreyToolStripMenuItem.Text = "Negativegrey";
-            negativegreyToolStripMenuItem.Click += NegativegreyToolStripMenuItem_Click;
             // 
             // Form1
             // 
