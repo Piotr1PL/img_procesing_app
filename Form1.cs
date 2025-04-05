@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using static obraz.PpmLoader;
+using static obraz.Negative;
 
 namespace obraz
 {
@@ -46,42 +47,36 @@ namespace obraz
                     MessageBox.Show("Nie ma obrazu do zapisania.");
                     return;
                 }
-
                 int width = bitmap.Width;
                 int height = bitmap.Height;
 
 
-                using (SaveFileDialog saveFileDialog = new SaveFileDialog())
+                using SaveFileDialog saveFileDialog = new();
+                saveFileDialog.Filter = "PPM Files (*.ppm)|*.ppm|All Files (*.*)|*.*";
+                saveFileDialog.DefaultExt = "ppm";
+                saveFileDialog.AddExtension = true;
+
+                if (saveFileDialog.ShowDialog() == DialogResult.OK)
                 {
-                    saveFileDialog.Filter = "PPM Files (*.ppm)|*.ppm|All Files (*.*)|*.*";
-                    saveFileDialog.DefaultExt = "ppm";
-                    saveFileDialog.AddExtension = true;
+                    string filePath = saveFileDialog.FileName;
 
-                    if (saveFileDialog.ShowDialog() == DialogResult.OK)
+                    using FileStream fs = new(filePath, FileMode.Create, FileAccess.Write);
+                    using BinaryWriter writer = new(fs);
+                    writer.Write(Encoding.ASCII.GetBytes("P6\n"));
+                    writer.Write(Encoding.ASCII.GetBytes($"{width} {height}\n"));
+                    writer.Write(Encoding.ASCII.GetBytes("255\n"));
+                    for (int y = 0; y < height; y++)
                     {
-                        string filePath = saveFileDialog.FileName;
-
-                        using (FileStream fs = new FileStream(filePath, FileMode.Create, FileAccess.Write))
-                        using (BinaryWriter writer = new BinaryWriter(fs))
+                        for (int x = 0; x < width; x++)
                         {
-                            // Write the PPM header
-                            writer.Write(Encoding.ASCII.GetBytes("P6\n"));
-                            writer.Write(Encoding.ASCII.GetBytes($"{width} {height}\n"));
-                            writer.Write(Encoding.ASCII.GetBytes("255\n"));
-                            for (int y = 0; y < height; y++)
-                            {
-                                for (int x = 0; x < width; x++)
-                                {
-                                    Color pixelColor = bitmap.GetPixel(x, y);
-                                    writer.Write(pixelColor.R);
-                                    writer.Write(pixelColor.G);
-                                    writer.Write(pixelColor.B);
-                                }
-                            }
-
-                            MessageBox.Show($"Obraz zapisany pomyœlnie: {filePath}");
+                            Color pixelColor = bitmap.GetPixel(x, y);
+                            writer.Write(pixelColor.R);
+                            writer.Write(pixelColor.G);
+                            writer.Write(pixelColor.B);
                         }
                     }
+
+                    MessageBox.Show($"Obraz zapisany pomyœlnie: {filePath}");
                 }
             }
             catch (Exception ex)
@@ -90,9 +85,19 @@ namespace obraz
             }
         }
 
-        private void negatywToolStripMenuItem_Click(object sender, EventArgs e)
+        private void NegatywToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void NegativeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Negative.InvertImage(pictureBox1);
+        }
+
+        private void NegativegreyToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            NegativeGrayscale.InvertGrayscaleImage(pictureBox1);
         }
     }
 }

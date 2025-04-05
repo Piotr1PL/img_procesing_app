@@ -33,8 +33,11 @@
             fileToolStripMenuItem = new ToolStripMenuItem();
             saveToolStripMenuItem = new ToolStripMenuItem();
             loadToolStripMenuItem = new ToolStripMenuItem();
-            negatywToolStripMenuItem = new ToolStripMenuItem();
+            negativeGreyScaleToolStripMenuItem = new ToolStripMenuItem();
+            negativeToolStripMenuItem = new ToolStripMenuItem();
+            greyScaleToolStripMenuItem = new ToolStripMenuItem();
             pictureBox1 = new PictureBox();
+            negativegreyToolStripMenuItem = new ToolStripMenuItem();
             menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
@@ -42,7 +45,7 @@
             // menuStrip1
             // 
             menuStrip1.ImageScalingSize = new Size(24, 24);
-            menuStrip1.Items.AddRange(new ToolStripItem[] { fileToolStripMenuItem, negatywToolStripMenuItem });
+            menuStrip1.Items.AddRange(new ToolStripItem[] { fileToolStripMenuItem, negativeGreyScaleToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
             menuStrip1.Size = new Size(800, 33);
@@ -71,12 +74,25 @@
             loadToolStripMenuItem.Text = "load";
             loadToolStripMenuItem.Click += LoadToolStripMenuItem_Click;
             // 
-            // negatywToolStripMenuItem
+            // negativeGreyScaleToolStripMenuItem
             // 
-            negatywToolStripMenuItem.Name = "negatywToolStripMenuItem";
-            negatywToolStripMenuItem.Size = new Size(175, 29);
-            negatywToolStripMenuItem.Text = "negative/greyscale";
-            negatywToolStripMenuItem.Click += negatywToolStripMenuItem_Click;
+            negativeGreyScaleToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { negativeToolStripMenuItem, negativegreyToolStripMenuItem, greyScaleToolStripMenuItem });
+            negativeGreyScaleToolStripMenuItem.Name = "negativeGreyScaleToolStripMenuItem";
+            negativeGreyScaleToolStripMenuItem.Size = new Size(181, 29);
+            negativeGreyScaleToolStripMenuItem.Text = "Negative/GreyScale";
+            // 
+            // negativeToolStripMenuItem
+            // 
+            negativeToolStripMenuItem.Name = "negativeToolStripMenuItem";
+            negativeToolStripMenuItem.Size = new Size(270, 34);
+            negativeToolStripMenuItem.Text = "Negative";
+            negativeToolStripMenuItem.Click += NegativeToolStripMenuItem_Click;
+            // 
+            // greyScaleToolStripMenuItem
+            // 
+            greyScaleToolStripMenuItem.Name = "greyScaleToolStripMenuItem";
+            greyScaleToolStripMenuItem.Size = new Size(270, 34);
+            greyScaleToolStripMenuItem.Text = "GreyScale";
             // 
             // pictureBox1
             // 
@@ -87,6 +103,13 @@
             pictureBox1.TabIndex = 1;
             pictureBox1.TabStop = false;
             pictureBox1.Click += PictureBox1_Click;
+            // 
+            // negativegreyToolStripMenuItem
+            // 
+            negativegreyToolStripMenuItem.Name = "negativegreyToolStripMenuItem";
+            negativegreyToolStripMenuItem.Size = new Size(270, 34);
+            negativegreyToolStripMenuItem.Text = "Negativegrey";
+            negativegreyToolStripMenuItem.Click += NegativegreyToolStripMenuItem_Click;
             // 
             // Form1
             // 
@@ -113,6 +136,9 @@
         private ToolStripMenuItem saveToolStripMenuItem;
         private ToolStripMenuItem loadToolStripMenuItem;
         private PictureBox pictureBox1;
-        private ToolStripMenuItem negatywToolStripMenuItem;
+        private ToolStripMenuItem negativeGreyScaleToolStripMenuItem;
+        private ToolStripMenuItem negativeToolStripMenuItem;
+        private ToolStripMenuItem greyScaleToolStripMenuItem;
+        private ToolStripMenuItem negativegreyToolStripMenuItem;
     }
 }
