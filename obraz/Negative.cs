@@ -8,7 +8,7 @@ namespace obraz
 {
     internal class Negative
     {
-        public static void InvertImage(PictureBox pictureBox)
+        public static void InvertImage(PictureBox pictureBox, PictureBox pictureBox2)
         {
             try
             {
@@ -28,7 +28,7 @@ namespace obraz
                     }
                 }
 
-                pictureBox.Image = bitmap;
+                pictureBox2.Image = bitmap;
             }
             catch (Exception ex)
             {
@@ -38,7 +38,7 @@ namespace obraz
     }
     internal class NegativeGrayscale
     {
-        public static void InvertGrayscaleImage(PictureBox pictureBox)
+        public static void InvertGrayscaleImage(PictureBox pictureBox, PictureBox pictureBox2)
         {
             try
             {
@@ -61,7 +61,7 @@ namespace obraz
                     }
                 }
 
-                pictureBox.Image = bitmap;
+                pictureBox2.Image = bitmap;
             }
             catch (Exception ex)
             {

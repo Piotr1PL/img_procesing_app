@@ -94,18 +94,28 @@ namespace obraz
 
         private void NegativeToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Negative.InvertImage(pictureBox1);
+            Negative.InvertImage(pictureBox1, pictureBox2);
         }
 
         private void NegativegreyToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            NegativeGrayscale.InvertGrayscaleImage(pictureBox1);
+            NegativeGrayscale.InvertGrayscaleImage(pictureBox1, pictureBox2);
         }
 
         private void GreyScaleToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            new Greyscale(pictureBox1);
+            new Greyscale(pictureBox1, pictureBox2);
         }
+
+        private void brightnessToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
         }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+
+        }
+    }
 }
 
