@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("obraz")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2ddaf9b372f11d9fc64fec6ff4667e53efac6b83")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+cdd864ae42437d4c4776f77d099d6f7e3e17118a")]
 [assembly: System.Reflection.AssemblyProductAttribute("obraz")]
 [assembly: System.Reflection.AssemblyTitleAttribute("obraz")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

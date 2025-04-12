@@ -9,14 +9,22 @@ using static obraz.PpmLoader;
 using static obraz.Negative;
 using static obraz.Greyscale;
 using System.Security.Cryptography.X509Certificates;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace obraz
 {
     public partial class Form1 : Form
     {
+
         public Form1()
         {
             InitializeComponent();
+            textBox1.Visible = false;
+            textBox2.Visible = false;
+            textBox3.Visible = false;
+            trackBarBrightness.Visible = false;
+            trackBarContrast.Visible = false;
+            trackBarGamma.Visible = false;
         }
 
         private void PictureBox1_Click(object sender, EventArgs e) { }
@@ -110,11 +118,85 @@ namespace obraz
         private void brightnessToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
+            if (trackBarBrightness.Visible)
+            {
+                trackBarBrightness.Visible = false;
+            }
+            else
+            {
+                trackBarBrightness.Visible = true;
+                trackBarContrast.Visible = false;
+                trackBarGamma.Visible = false;
+            }
         }
 
         private void pictureBox2_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+        private void trackBar1_Scroll(object sender, EventArgs e)
+        {
+
+        }
+
+        private void trackBar2_Scroll(object sender, EventArgs e)
+        {
+
+        }
+
+
+        private void trackBar3_Scroll(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox3_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+
+        private void contrastToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (trackBarContrast.Visible)
+            {
+                trackBarContrast.Visible = false;
+            }
+            else
+            {
+                trackBarContrast.Visible = true;
+                trackBarBrightness.Visible = false;
+                trackBarGamma.Visible = false;
+            }
+        }
+
+        private void gammaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (trackBarGamma.Visible)
+            {
+                trackBarGamma.Visible = false;
+            }
+            else
+            {
+                trackBarGamma.Visible = true;
+                trackBarBrightness.Visible = false;
+                trackBarContrast.Visible = false;
+            }
         }
     }
 }
