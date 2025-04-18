@@ -42,6 +42,7 @@
             contrastToolStripMenuItem = new ToolStripMenuItem();
             gammaToolStripMenuItem = new ToolStripMenuItem();
             histogramToolStripMenuItem = new ToolStripMenuItem();
+            histogramToolStripMenuItem1 = new ToolStripMenuItem();
             strechingToolStripMenuItem = new ToolStripMenuItem();
             equalizationToolStripMenuItem = new ToolStripMenuItem();
             pictureBox1 = new PictureBox();
@@ -52,7 +53,10 @@
             textBox1 = new TextBox();
             textBox2 = new TextBox();
             textBox3 = new TextBox();
-            histogramToolStripMenuItem1 = new ToolStripMenuItem();
+            convolutionToolStripMenuItem = new ToolStripMenuItem();
+            gaussToolStripMenuItem = new ToolStripMenuItem();
+            uniformBlurToolStripMenuItem = new ToolStripMenuItem();
+            customKarnelToolStripMenuItem = new ToolStripMenuItem();
             menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
@@ -64,7 +68,7 @@
             // menuStrip1
             // 
             menuStrip1.ImageScalingSize = new Size(24, 24);
-            menuStrip1.Items.AddRange(new ToolStripItem[] { fileToolStripMenuItem, negativeGreyScaleToolStripMenuItem, correctionToolStripMenuItem, histogramToolStripMenuItem });
+            menuStrip1.Items.AddRange(new ToolStripItem[] { fileToolStripMenuItem, negativeGreyScaleToolStripMenuItem, correctionToolStripMenuItem, histogramToolStripMenuItem, convolutionToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
             menuStrip1.Size = new Size(1358, 33);
@@ -131,21 +135,21 @@
             // brightnessToolStripMenuItem
             // 
             brightnessToolStripMenuItem.Name = "brightnessToolStripMenuItem";
-            brightnessToolStripMenuItem.Size = new Size(270, 34);
+            brightnessToolStripMenuItem.Size = new Size(197, 34);
             brightnessToolStripMenuItem.Text = "brightness";
             brightnessToolStripMenuItem.Click += brightnessToolStripMenuItem_Click;
             // 
             // contrastToolStripMenuItem
             // 
             contrastToolStripMenuItem.Name = "contrastToolStripMenuItem";
-            contrastToolStripMenuItem.Size = new Size(270, 34);
+            contrastToolStripMenuItem.Size = new Size(197, 34);
             contrastToolStripMenuItem.Text = "contrast";
             contrastToolStripMenuItem.Click += contrastToolStripMenuItem_Click;
             // 
             // gammaToolStripMenuItem
             // 
             gammaToolStripMenuItem.Name = "gammaToolStripMenuItem";
-            gammaToolStripMenuItem.Size = new Size(270, 34);
+            gammaToolStripMenuItem.Size = new Size(197, 34);
             gammaToolStripMenuItem.Text = "gamma";
             gammaToolStripMenuItem.Click += gammaToolStripMenuItem_Click;
             // 
@@ -156,17 +160,24 @@
             histogramToolStripMenuItem.Size = new Size(109, 29);
             histogramToolStripMenuItem.Text = "histogram";
             // 
+            // histogramToolStripMenuItem1
+            // 
+            histogramToolStripMenuItem1.Name = "histogramToolStripMenuItem1";
+            histogramToolStripMenuItem1.Size = new Size(209, 34);
+            histogramToolStripMenuItem1.Text = "histogram";
+            histogramToolStripMenuItem1.Click += histogramToolStripMenuItem1_Click;
+            // 
             // strechingToolStripMenuItem
             // 
             strechingToolStripMenuItem.Name = "strechingToolStripMenuItem";
-            strechingToolStripMenuItem.Size = new Size(270, 34);
+            strechingToolStripMenuItem.Size = new Size(209, 34);
             strechingToolStripMenuItem.Text = "Streching";
             strechingToolStripMenuItem.Click += strechingToolStripMenuItem_Click;
             // 
             // equalizationToolStripMenuItem
             // 
             equalizationToolStripMenuItem.Name = "equalizationToolStripMenuItem";
-            equalizationToolStripMenuItem.Size = new Size(270, 34);
+            equalizationToolStripMenuItem.Size = new Size(209, 34);
             equalizationToolStripMenuItem.Text = "Equalization";
             equalizationToolStripMenuItem.Click += equalizationToolStripMenuItem_Click;
             // 
@@ -238,12 +249,33 @@
             textBox3.TabIndex = 8;
             textBox3.TextChanged += textBox3_TextChanged;
             // 
-            // histogramToolStripMenuItem1
+            // convolutionToolStripMenuItem
             // 
-            histogramToolStripMenuItem1.Name = "histogramToolStripMenuItem1";
-            histogramToolStripMenuItem1.Size = new Size(270, 34);
-            histogramToolStripMenuItem1.Text = "histogram";
-            histogramToolStripMenuItem1.Click += histogramToolStripMenuItem1_Click;
+            convolutionToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { gaussToolStripMenuItem, uniformBlurToolStripMenuItem, customKarnelToolStripMenuItem });
+            convolutionToolStripMenuItem.Name = "convolutionToolStripMenuItem";
+            convolutionToolStripMenuItem.Size = new Size(125, 29);
+            convolutionToolStripMenuItem.Text = "Convolution";
+            // 
+            // gaussToolStripMenuItem
+            // 
+            gaussToolStripMenuItem.Name = "gaussToolStripMenuItem";
+            gaussToolStripMenuItem.Size = new Size(270, 34);
+            gaussToolStripMenuItem.Text = "gauss";
+            gaussToolStripMenuItem.Click += gaussToolStripMenuItem_Click;
+            // 
+            // uniformBlurToolStripMenuItem
+            // 
+            uniformBlurToolStripMenuItem.Name = "uniformBlurToolStripMenuItem";
+            uniformBlurToolStripMenuItem.Size = new Size(270, 34);
+            uniformBlurToolStripMenuItem.Text = "Uniform Blur";
+            uniformBlurToolStripMenuItem.Click += uniformBlurToolStripMenuItem_Click;
+            // 
+            // customKarnelToolStripMenuItem
+            // 
+            customKarnelToolStripMenuItem.Name = "customKarnelToolStripMenuItem";
+            customKarnelToolStripMenuItem.Size = new Size(270, 34);
+            customKarnelToolStripMenuItem.Text = "custom karnel";
+            customKarnelToolStripMenuItem.Click += customKarnelToolStripMenuItem_Click;
             // 
             // Form1
             // 
@@ -301,5 +333,9 @@
         private ToolStripMenuItem strechingToolStripMenuItem;
         private ToolStripMenuItem equalizationToolStripMenuItem;
         private ToolStripMenuItem histogramToolStripMenuItem1;
+        private ToolStripMenuItem convolutionToolStripMenuItem;
+        private ToolStripMenuItem gaussToolStripMenuItem;
+        private ToolStripMenuItem uniformBlurToolStripMenuItem;
+        private ToolStripMenuItem customKarnelToolStripMenuItem;
     }
 }

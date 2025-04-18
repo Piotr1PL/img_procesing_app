@@ -115,7 +115,7 @@ namespace obraz
 
                 int min = 255, max = 0;
 
-                // ZnajdŸ minimaln¹ i maksymaln¹ wartoœæ jasnoœci (w skali szaroœci)
+
                 for (int y = 0; y < original.Height; y++)
                 {
                     for (int x = 0; x < original.Width; x++)
@@ -127,7 +127,7 @@ namespace obraz
                     }
                 }
 
-                if (max == min) return; // uniknij dzielenia przez 0
+                if (max == min) return; 
 
                 float scale = 255f / (max - min);
 
@@ -155,71 +155,69 @@ namespace obraz
 
 
             public static void EqualizeHistogram(PictureBox inputBox, PictureBox outputBox)
-{
-    if (inputBox.Image == null) return;
+            {
+                if (inputBox.Image == null) return;
 
-    Bitmap original = new(inputBox.Image);
-    Bitmap result = new(original.Width, original.Height);
+                Bitmap original = new(inputBox.Image);
+                Bitmap result = new(original.Width, original.Height);
 
-    int width = original.Width;
-    int height = original.Height;
+                int width = original.Width;
+                int height = original.Height;
 
-    // Histograms and CDFs for R, G, B
-    int[] rHist = new int[256];
-    int[] gHist = new int[256];
-    int[] bHist = new int[256];
 
-    // Step 1: Compute histograms
-    for (int y = 0; y < height; y++)
-    {
-        for (int x = 0; x < width; x++)
-        {
-            Color pixel = original.GetPixel(x, y);
-            rHist[pixel.R]++;
-            gHist[pixel.G]++;
-            bHist[pixel.B]++;
-        }
-    }
+                int[] rHist = new int[256];
+                int[] gHist = new int[256];
+                int[] bHist = new int[256];
 
-    // Step 2: Compute CDF for each channel
-    int totalPixels = width * height;
-    int[] rLUT = BuildEqualizationLUT(rHist, totalPixels);
-    int[] gLUT = BuildEqualizationLUT(gHist, totalPixels);
-    int[] bLUT = BuildEqualizationLUT(bHist, totalPixels);
+                for (int y = 0; y < height; y++)
+                {
+                    for (int x = 0; x < width; x++)
+                    {
+                        Color pixel = original.GetPixel(x, y);
+                        rHist[pixel.R]++;
+                        gHist[pixel.G]++;
+                        bHist[pixel.B]++;
+                    }
+                }
 
-    // Step 3: Map each pixel using the LUTs
-    for (int y = 0; y < height; y++)
-    {
-        for (int x = 0; x < width; x++)
-        {
-            Color pixel = original.GetPixel(x, y);
-            int r = rLUT[pixel.R];
-            int g = gLUT[pixel.G];
-            int b = bLUT[pixel.B];
+                int totalPixels = width * height;
+                int[] rLUT = BuildEqualizationLUT(rHist, totalPixels);
+                int[] gLUT = BuildEqualizationLUT(gHist, totalPixels);
+                int[] bLUT = BuildEqualizationLUT(bHist, totalPixels);
 
-            result.SetPixel(x, y, Color.FromArgb(r, g, b));
-        }
-    }
 
-    outputBox.Image = result;
-}
+                for (int y = 0; y < height; y++)
+                {
+                    for (int x = 0; x < width; x++)
+                    {
+                        Color pixel = original.GetPixel(x, y);
+                        int r = rLUT[pixel.R];
+                        int g = gLUT[pixel.G];
+                        int b = bLUT[pixel.B];
 
-// Builds a lookup table for equalization
-private static int[] BuildEqualizationLUT(int[] hist, int totalPixels)
-{
-    int[] lut = new int[256];
-    float[] cdf = new float[256];
-    int sum = 0;
+                        result.SetPixel(x, y, Color.FromArgb(r, g, b));
+                    }
+                }
 
-    for (int i = 0; i < 256; i++)
-    {
-        sum += hist[i];
-        cdf[i] = (float)sum / totalPixels;
-        lut[i] = (int)(cdf[i] * 255);
-    }
+                outputBox.Image = result;
+            }
 
-    return lut;
-}
+
+            private static int[] BuildEqualizationLUT(int[] hist, int totalPixels)
+            {
+                int[] lut = new int[256];
+                float[] cdf = new float[256];
+                int sum = 0;
+
+                for (int i = 0; i < 256; i++)
+                {
+                    sum += hist[i];
+                    cdf[i] = (float)sum / totalPixels;
+                    lut[i] = (int)(cdf[i] * 255);
+                }
+
+                return lut;
+            }
 
 
 
@@ -499,5 +497,92 @@ private static int[] BuildEqualizationLUT(int[] hist, int totalPixels)
         {
             HistogramOperations.ShowHistogram(pictureBox1);
         }
+
+        private void gaussToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ConvolutionOperations.ApplyGaussianBlur(pictureBox1, pictureBox2);
+        }
+
+        private void uniformBlurToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ConvolutionOperations.ApplyUniformBlur(pictureBox1, pictureBox2);
+        }
+
+        private void customKarnelToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (pictureBox1.Image == null)
+            {
+                MessageBox.Show("Najpierw wczytaj obraz.");
+                return;
+            }
+
+            Form kernelForm = new Form
+            {
+                Text = "WprowadŸ maskê splotu (np. 3x3, wartoœci oddzielone spacjami, wiersze enterami)",
+                Width = 400,
+                Height = 300
+            };
+
+            TextBox kernelInput = new TextBox
+            {
+                Multiline = true,
+                Dock = DockStyle.Fill,
+                AcceptsReturn = true,
+                AcceptsTab = true,
+                Text = "1 1 1\n1 1 1\n1 1 1" 
+            };
+
+            Button applyButton = new Button
+            {
+                Text = "Zastosuj",
+                Dock = DockStyle.Bottom
+            };
+
+            kernelForm.Controls.Add(kernelInput);
+            kernelForm.Controls.Add(applyButton);
+
+            applyButton.Click += (s, ev) =>
+            {
+                try
+                {
+                    string[] rows = kernelInput.Text.Trim().Split('\n');
+                    int size = rows.Length;
+                    if (size % 2 == 0 || size < 3)
+                    {
+                        MessageBox.Show("Rozmiar maski musi byæ nieparzysty i wiêkszy lub równy 3.");
+                        return;
+                    }
+
+                    float[,] kernel = new float[size, size];
+
+                    for (int i = 0; i < size; i++)
+                    {
+                        string[] values = rows[i].Trim().Split(' ', StringSplitOptions.RemoveEmptyEntries);
+                        if (values.Length != size)
+                        {
+                            MessageBox.Show("Maska musi byæ kwadratowa!");
+                            return;
+                        }
+
+                        for (int j = 0; j < size; j++)
+                        {
+                            kernel[i, j] = float.Parse(values[j]);
+                        }
+                    }
+
+                    ConvolutionOperations.ApplyConvolution(pictureBox1, pictureBox2, kernel);
+                    kernelForm.Close();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("B³¹d podczas parsowania maski: " + ex.Message);
+                }
+            };
+
+            kernelForm.ShowDialog();
+        }
     }
+
+
 }
+

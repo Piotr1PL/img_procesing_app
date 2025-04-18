@@ -11,12 +11,16 @@
       "RelativeMoniker": "D:0:0:{C4959D7A-0333-4764-8B86-135F9A4F58AE}|obraz\\obraz.csproj|solutionrelative:obraz\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C4959D7A-0333-4764-8B86-135F9A4F58AE}|obraz\\obraz.csproj|c:\\users\\kocio\\desktop\\obraz\\obraz\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C4959D7A-0333-4764-8B86-135F9A4F58AE}|obraz\\obraz.csproj|solutionrelative:obraz\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{C4959D7A-0333-4764-8B86-135F9A4F58AE}|obraz\\obraz.csproj|c:\\users\\kocio\\desktop\\obraz\\obraz\\convolutionoperations.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C4959D7A-0333-4764-8B86-135F9A4F58AE}|obraz\\obraz.csproj|solutionrelative:obraz\\convolutionoperations.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{C4959D7A-0333-4764-8B86-135F9A4F58AE}|obraz\\obraz.csproj|c:\\users\\kocio\\desktop\\obraz\\obraz\\contrastsigmoid.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C4959D7A-0333-4764-8B86-135F9A4F58AE}|obraz\\obraz.csproj|solutionrelative:obraz\\contrastsigmoid.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C4959D7A-0333-4764-8B86-135F9A4F58AE}|obraz\\obraz.csproj|c:\\users\\kocio\\desktop\\obraz\\obraz\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C4959D7A-0333-4764-8B86-135F9A4F58AE}|obraz\\obraz.csproj|solutionrelative:obraz\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{C4959D7A-0333-4764-8B86-135F9A4F58AE}|obraz\\obraz.csproj|c:\\users\\kocio\\desktop\\obraz\\obraz\\gammacorrection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -42,8 +46,21 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 2,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ConvolutionOperations.cs",
+              "DocumentMoniker": "C:\\Users\\Kocio\\Desktop\\obraz\\obraz\\ConvolutionOperations.cs",
+              "RelativeDocumentMoniker": "obraz\\ConvolutionOperations.cs",
+              "ToolTip": "C:\\Users\\Kocio\\Desktop\\obraz\\obraz\\ConvolutionOperations.cs",
+              "RelativeToolTip": "obraz\\ConvolutionOperations.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAG0AAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-18T16:35:44.816Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Document",
               "DocumentIndex": 3,
@@ -54,7 +71,8 @@
               "RelativeToolTip": "obraz\\ContrastSigmoid.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAnAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-17T13:08:41.128Z"
+              "WhenOpened": "2025-04-17T13:08:41.128Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -64,14 +82,14 @@
               "RelativeDocumentMoniker": "obraz\\Form1.cs",
               "ToolTip": "C:\\Users\\Kocio\\Desktop\\obraz\\obraz\\Form1.cs",
               "RelativeToolTip": "obraz\\Form1.cs",
-              "ViewState": "AgIAAMsBAAAAAAAAAAAtwN8BAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAHUAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-12T00:09:24.881Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 7,
               "Title": "Negative.cs",
               "DocumentMoniker": "C:\\Users\\Kocio\\Desktop\\obraz\\obraz\\Negative.cs",
               "RelativeDocumentMoniker": "obraz\\Negative.cs",
@@ -83,7 +101,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "PpmLoader.cs",
               "DocumentMoniker": "C:\\Users\\Kocio\\Desktop\\obraz\\obraz\\PpmLoader.cs",
               "RelativeDocumentMoniker": "obraz\\PpmLoader.cs",
@@ -102,11 +120,12 @@
               "ToolTip": "C:\\Users\\Kocio\\Desktop\\obraz\\obraz\\Form1.cs [Projekt]",
               "RelativeToolTip": "obraz\\Form1.cs [Projekt]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-12T00:07:25.594Z"
+              "WhenOpened": "2025-04-12T00:07:25.594Z",
+              "EditorCaption": " [Projekt]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 4,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\Kocio\\Desktop\\obraz\\obraz\\Program.cs",
               "RelativeDocumentMoniker": "obraz\\Program.cs",
@@ -118,7 +137,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "GammaCorrection.cs",
               "DocumentMoniker": "C:\\Users\\Kocio\\Desktop\\obraz\\obraz\\GammaCorrection.cs",
               "RelativeDocumentMoniker": "obraz\\GammaCorrection.cs",
@@ -130,7 +149,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 8,
               "Title": "Greyscale.cs",
               "DocumentMoniker": "C:\\Users\\Kocio\\Desktop\\obraz\\obraz\\Greyscale.cs",
               "RelativeDocumentMoniker": "obraz\\Greyscale.cs",
