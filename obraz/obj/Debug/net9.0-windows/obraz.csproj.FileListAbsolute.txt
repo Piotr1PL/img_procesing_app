@@ -16,3 +16,7 @@ C:\Users\Kocio\Desktop\obraz\obraz\obj\Debug\net9.0-windows\refint\obraz.dll
 C:\Users\Kocio\Desktop\obraz\obraz\obj\Debug\net9.0-windows\obraz.pdb
 C:\Users\Kocio\Desktop\obraz\obraz\obj\Debug\net9.0-windows\obraz.genruntimeconfig.cache
 C:\Users\Kocio\Desktop\obraz\obraz\obj\Debug\net9.0-windows\ref\obraz.dll
+C:\Users\Kocio\Desktop\obraz\obraz\obj\Debug\net9.0-windows\obraz.csproj.AssemblyReference.cache
+C:\Users\Kocio\Desktop\obraz\obraz\bin\Debug\net9.0-windows\WinForms.DataVisualization.Utilities.dll
+C:\Users\Kocio\Desktop\obraz\obraz\bin\Debug\net9.0-windows\WinForms.DataVisualization.dll
+C:\Users\Kocio\Desktop\obraz\obraz\obj\Debug\net9.0-windows\obraz.csproj.Up2Date

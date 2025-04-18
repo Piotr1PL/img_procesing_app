@@ -1,12 +1,148 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\Kocio\\Desktop\\obraz\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{C4959D7A-0333-4764-8B86-135F9A4F58AE}|obraz\\obraz.csproj|c:\\users\\kocio\\desktop\\obraz\\obraz\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C4959D7A-0333-4764-8B86-135F9A4F58AE}|obraz\\obraz.csproj|solutionrelative:obraz\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C4959D7A-0333-4764-8B86-135F9A4F58AE}|obraz\\obraz.csproj|C:\\Users\\Kocio\\Desktop\\obraz\\obraz\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{C4959D7A-0333-4764-8B86-135F9A4F58AE}|obraz\\obraz.csproj|solutionrelative:obraz\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C4959D7A-0333-4764-8B86-135F9A4F58AE}|obraz\\obraz.csproj|c:\\users\\kocio\\desktop\\obraz\\obraz\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C4959D7A-0333-4764-8B86-135F9A4F58AE}|obraz\\obraz.csproj|solutionrelative:obraz\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C4959D7A-0333-4764-8B86-135F9A4F58AE}|obraz\\obraz.csproj|c:\\users\\kocio\\desktop\\obraz\\obraz\\contrastsigmoid.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C4959D7A-0333-4764-8B86-135F9A4F58AE}|obraz\\obraz.csproj|solutionrelative:obraz\\contrastsigmoid.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C4959D7A-0333-4764-8B86-135F9A4F58AE}|obraz\\obraz.csproj|c:\\users\\kocio\\desktop\\obraz\\obraz\\gammacorrection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C4959D7A-0333-4764-8B86-135F9A4F58AE}|obraz\\obraz.csproj|solutionrelative:obraz\\gammacorrection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C4959D7A-0333-4764-8B86-135F9A4F58AE}|obraz\\obraz.csproj|c:\\users\\kocio\\desktop\\obraz\\obraz\\ppmloader.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C4959D7A-0333-4764-8B86-135F9A4F58AE}|obraz\\obraz.csproj|solutionrelative:obraz\\ppmloader.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C4959D7A-0333-4764-8B86-135F9A4F58AE}|obraz\\obraz.csproj|c:\\users\\kocio\\desktop\\obraz\\obraz\\negative.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C4959D7A-0333-4764-8B86-135F9A4F58AE}|obraz\\obraz.csproj|solutionrelative:obraz\\negative.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C4959D7A-0333-4764-8B86-135F9A4F58AE}|obraz\\obraz.csproj|c:\\users\\kocio\\desktop\\obraz\\obraz\\greyscale.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C4959D7A-0333-4764-8B86-135F9A4F58AE}|obraz\\obraz.csproj|solutionrelative:obraz\\greyscale.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": []
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ContrastSigmoid.cs",
+              "DocumentMoniker": "C:\\Users\\Kocio\\Desktop\\obraz\\obraz\\ContrastSigmoid.cs",
+              "RelativeDocumentMoniker": "obraz\\ContrastSigmoid.cs",
+              "ToolTip": "C:\\Users\\Kocio\\Desktop\\obraz\\obraz\\ContrastSigmoid.cs",
+              "RelativeToolTip": "obraz\\ContrastSigmoid.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-17T13:08:41.128Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Form1.cs",
+              "DocumentMoniker": "C:\\Users\\Kocio\\Desktop\\obraz\\obraz\\Form1.cs",
+              "RelativeDocumentMoniker": "obraz\\Form1.cs",
+              "ToolTip": "C:\\Users\\Kocio\\Desktop\\obraz\\obraz\\Form1.cs",
+              "RelativeToolTip": "obraz\\Form1.cs",
+              "ViewState": "AgIAAMsBAAAAAAAAAAAtwN8BAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-12T00:09:24.881Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Negative.cs",
+              "DocumentMoniker": "C:\\Users\\Kocio\\Desktop\\obraz\\obraz\\Negative.cs",
+              "RelativeDocumentMoniker": "obraz\\Negative.cs",
+              "ToolTip": "C:\\Users\\Kocio\\Desktop\\obraz\\obraz\\Negative.cs",
+              "RelativeToolTip": "obraz\\Negative.cs",
+              "ViewState": "AgIAAC0AAAAAAAAAAAAIwGsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-12T00:07:23.974Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "PpmLoader.cs",
+              "DocumentMoniker": "C:\\Users\\Kocio\\Desktop\\obraz\\obraz\\PpmLoader.cs",
+              "RelativeDocumentMoniker": "obraz\\PpmLoader.cs",
+              "ToolTip": "C:\\Users\\Kocio\\Desktop\\obraz\\obraz\\PpmLoader.cs",
+              "RelativeToolTip": "obraz\\PpmLoader.cs",
+              "ViewState": "AgIAAIEAAAAAAAAAAAAUwMAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-12T00:07:23.484Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Form1.cs [Projekt]",
+              "DocumentMoniker": "C:\\Users\\Kocio\\Desktop\\obraz\\obraz\\Form1.cs",
+              "RelativeDocumentMoniker": "obraz\\Form1.cs",
+              "ToolTip": "C:\\Users\\Kocio\\Desktop\\obraz\\obraz\\Form1.cs [Projekt]",
+              "RelativeToolTip": "obraz\\Form1.cs [Projekt]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-12T00:07:25.594Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Kocio\\Desktop\\obraz\\obraz\\Program.cs",
+              "RelativeDocumentMoniker": "obraz\\Program.cs",
+              "ToolTip": "C:\\Users\\Kocio\\Desktop\\obraz\\obraz\\Program.cs",
+              "RelativeToolTip": "obraz\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-12T00:07:24.412Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "GammaCorrection.cs",
+              "DocumentMoniker": "C:\\Users\\Kocio\\Desktop\\obraz\\obraz\\GammaCorrection.cs",
+              "RelativeDocumentMoniker": "obraz\\GammaCorrection.cs",
+              "ToolTip": "C:\\Users\\Kocio\\Desktop\\obraz\\obraz\\GammaCorrection.cs",
+              "RelativeToolTip": "obraz\\GammaCorrection.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACkAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-17T12:48:03.267Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Greyscale.cs",
+              "DocumentMoniker": "C:\\Users\\Kocio\\Desktop\\obraz\\obraz\\Greyscale.cs",
+              "RelativeDocumentMoniker": "obraz\\Greyscale.cs",
+              "ToolTip": "C:\\Users\\Kocio\\Desktop\\obraz\\obraz\\Greyscale.cs",
+              "RelativeToolTip": "obraz\\Greyscale.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-12T00:07:22.871Z"
+            }
+          ]
+        }
+      ]
     }
   ]
 }
