@@ -58,8 +58,7 @@
               "RelativeToolTip": "obraz\\ConvolutionOperations.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAG0AAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-18T16:35:44.816Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-18T16:35:44.816Z"
             },
             {
               "$type": "Document",
@@ -71,8 +70,7 @@
               "RelativeToolTip": "obraz\\ContrastSigmoid.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAnAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-17T13:08:41.128Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-17T13:08:41.128Z"
             },
             {
               "$type": "Document",
@@ -80,8 +78,8 @@
               "Title": "Form1.cs",
               "DocumentMoniker": "C:\\Users\\Kocio\\Desktop\\obraz\\obraz\\Form1.cs",
               "RelativeDocumentMoniker": "obraz\\Form1.cs",
-              "ToolTip": "C:\\Users\\Kocio\\Desktop\\obraz\\obraz\\Form1.cs*",
-              "RelativeToolTip": "obraz\\Form1.cs*",
+              "ToolTip": "C:\\Users\\Kocio\\Desktop\\obraz\\obraz\\Form1.cs",
+              "RelativeToolTip": "obraz\\Form1.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAHUAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-12T00:09:24.881Z",
@@ -117,11 +115,10 @@
               "Title": "Form1.cs [Projekt]",
               "DocumentMoniker": "C:\\Users\\Kocio\\Desktop\\obraz\\obraz\\Form1.cs",
               "RelativeDocumentMoniker": "obraz\\Form1.cs",
-              "ToolTip": "C:\\Users\\Kocio\\Desktop\\obraz\\obraz\\Form1.cs [Projekt]*",
-              "RelativeToolTip": "obraz\\Form1.cs [Projekt]*",
+              "ToolTip": "C:\\Users\\Kocio\\Desktop\\obraz\\obraz\\Form1.cs [Projekt]",
+              "RelativeToolTip": "obraz\\Form1.cs [Projekt]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-12T00:07:25.594Z",
-              "EditorCaption": " [Projekt]"
+              "WhenOpened": "2025-04-12T00:07:25.594Z"
             },
             {
               "$type": "Document",

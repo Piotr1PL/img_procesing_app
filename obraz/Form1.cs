@@ -127,7 +127,7 @@ namespace obraz
                     }
                 }
 
-                if (max == min) return; 
+                if (max == min) return;
 
                 float scale = 255f / (max - min);
 
@@ -529,7 +529,7 @@ namespace obraz
                 Dock = DockStyle.Fill,
                 AcceptsReturn = true,
                 AcceptsTab = true,
-                Text = "1 1 1\n1 1 1\n1 1 1" 
+                Text = "1 1 1\n1 1 1\n1 1 1"
             };
 
             Button applyButton = new Button
@@ -580,6 +580,37 @@ namespace obraz
             };
 
             kernelForm.ShowDialog();
+        }
+
+        private void robertsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Gradient.ApplyRobertsFilter(pictureBox1, pictureBox2);
+        }
+
+        private void prewittaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Gradient.ApplyPrewittFilter(pictureBox1, pictureBox2);
+        }
+
+        private void sobelToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Gradient.ApplySobelFilter(pictureBox1, pictureBox2);
+        }
+
+        private void laplaceToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Gradient.ApplyLaplacianFilter(pictureBox1, pictureBox2);
+
+        }
+
+        private void laplaceZeroToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Gradient.ApplyZeroCrossingFilter(pictureBox1, pictureBox2);
+        }
+
+        private void cannyToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Gradient.ApplyCannyEdgeDetection(pictureBox1, pictureBox2);
         }
     }
 
