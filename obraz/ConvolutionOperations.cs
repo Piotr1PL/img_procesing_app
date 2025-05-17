@@ -12,7 +12,7 @@ namespace obraz
         {
             if (inputBox.Image == null)
             {
-                MessageBox.Show("Najpierw wczytaj obraz.");
+                MessageBox.Show("first load img");
                 return;
             }
 

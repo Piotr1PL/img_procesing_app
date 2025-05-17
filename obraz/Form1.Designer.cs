@@ -56,6 +56,8 @@
             laplaceToolStripMenuItem = new ToolStripMenuItem();
             cannyToolStripMenuItem = new ToolStripMenuItem();
             laplaceZeroToolStripMenuItem = new ToolStripMenuItem();
+            tresholdingToolStripMenuItem = new ToolStripMenuItem();
+            manulTresholdingToolStripMenuItem = new ToolStripMenuItem();
             pictureBox1 = new PictureBox();
             pictureBox2 = new PictureBox();
             trackBarBrightness = new TrackBar();
@@ -64,6 +66,7 @@
             textBox1 = new TextBox();
             textBox2 = new TextBox();
             textBox3 = new TextBox();
+            iterativeThresholdingToolStripMenuItem = new ToolStripMenuItem();
             menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
@@ -75,7 +78,7 @@
             // menuStrip1
             // 
             menuStrip1.ImageScalingSize = new Size(24, 24);
-            menuStrip1.Items.AddRange(new ToolStripItem[] { fileToolStripMenuItem, negativeGreyScaleToolStripMenuItem, correctionToolStripMenuItem, histogramToolStripMenuItem, convolutionToolStripMenuItem, transformationsToolStripMenuItem });
+            menuStrip1.Items.AddRange(new ToolStripItem[] { fileToolStripMenuItem, negativeGreyScaleToolStripMenuItem, correctionToolStripMenuItem, histogramToolStripMenuItem, convolutionToolStripMenuItem, transformationsToolStripMenuItem, tresholdingToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
             menuStrip1.Size = new Size(1358, 33);
@@ -226,44 +229,58 @@
             // robertsToolStripMenuItem
             // 
             robertsToolStripMenuItem.Name = "robertsToolStripMenuItem";
-            robertsToolStripMenuItem.Size = new Size(270, 34);
+            robertsToolStripMenuItem.Size = new Size(211, 34);
             robertsToolStripMenuItem.Text = "Roberts";
             robertsToolStripMenuItem.Click += robertsToolStripMenuItem_Click;
             // 
             // prewittaToolStripMenuItem
             // 
             prewittaToolStripMenuItem.Name = "prewittaToolStripMenuItem";
-            prewittaToolStripMenuItem.Size = new Size(270, 34);
+            prewittaToolStripMenuItem.Size = new Size(211, 34);
             prewittaToolStripMenuItem.Text = "Prewitta";
             prewittaToolStripMenuItem.Click += prewittaToolStripMenuItem_Click;
             // 
             // sobelToolStripMenuItem
             // 
             sobelToolStripMenuItem.Name = "sobelToolStripMenuItem";
-            sobelToolStripMenuItem.Size = new Size(270, 34);
+            sobelToolStripMenuItem.Size = new Size(211, 34);
             sobelToolStripMenuItem.Text = "Sobel";
             sobelToolStripMenuItem.Click += sobelToolStripMenuItem_Click;
             // 
             // laplaceToolStripMenuItem
             // 
             laplaceToolStripMenuItem.Name = "laplaceToolStripMenuItem";
-            laplaceToolStripMenuItem.Size = new Size(270, 34);
+            laplaceToolStripMenuItem.Size = new Size(211, 34);
             laplaceToolStripMenuItem.Text = "Laplace";
             laplaceToolStripMenuItem.Click += laplaceToolStripMenuItem_Click;
             // 
             // cannyToolStripMenuItem
             // 
             cannyToolStripMenuItem.Name = "cannyToolStripMenuItem";
-            cannyToolStripMenuItem.Size = new Size(270, 34);
+            cannyToolStripMenuItem.Size = new Size(211, 34);
             cannyToolStripMenuItem.Text = "Canny";
             cannyToolStripMenuItem.Click += cannyToolStripMenuItem_Click;
             // 
             // laplaceZeroToolStripMenuItem
             // 
             laplaceZeroToolStripMenuItem.Name = "laplaceZeroToolStripMenuItem";
-            laplaceZeroToolStripMenuItem.Size = new Size(270, 34);
+            laplaceZeroToolStripMenuItem.Size = new Size(211, 34);
             laplaceZeroToolStripMenuItem.Text = "Laplace zero";
             laplaceZeroToolStripMenuItem.Click += laplaceZeroToolStripMenuItem_Click;
+            // 
+            // tresholdingToolStripMenuItem
+            // 
+            tresholdingToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { manulTresholdingToolStripMenuItem, iterativeThresholdingToolStripMenuItem });
+            tresholdingToolStripMenuItem.Name = "tresholdingToolStripMenuItem";
+            tresholdingToolStripMenuItem.Size = new Size(119, 29);
+            tresholdingToolStripMenuItem.Text = "Tresholding";
+            // 
+            // manulTresholdingToolStripMenuItem
+            // 
+            manulTresholdingToolStripMenuItem.Name = "manulTresholdingToolStripMenuItem";
+            manulTresholdingToolStripMenuItem.Size = new Size(280, 34);
+            manulTresholdingToolStripMenuItem.Text = "Manul Tresholding";
+            manulTresholdingToolStripMenuItem.Click += manulTresholdingToolStripMenuItem_Click;
             // 
             // pictureBox1
             // 
@@ -333,6 +350,13 @@
             textBox3.TabIndex = 8;
             textBox3.TextChanged += textBox3_TextChanged;
             // 
+            // iterativeThresholdingToolStripMenuItem
+            // 
+            iterativeThresholdingToolStripMenuItem.Name = "iterativeThresholdingToolStripMenuItem";
+            iterativeThresholdingToolStripMenuItem.Size = new Size(280, 34);
+            iterativeThresholdingToolStripMenuItem.Text = "IterativeThresholding";
+            iterativeThresholdingToolStripMenuItem.Click += iterativeThresholdingToolStripMenuItem_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
@@ -400,5 +424,8 @@
         private ToolStripMenuItem laplaceToolStripMenuItem;
         private ToolStripMenuItem cannyToolStripMenuItem;
         private ToolStripMenuItem laplaceZeroToolStripMenuItem;
+        private ToolStripMenuItem tresholdingToolStripMenuItem;
+        private ToolStripMenuItem manulTresholdingToolStripMenuItem;
+        private ToolStripMenuItem iterativeThresholdingToolStripMenuItem;
     }
 }

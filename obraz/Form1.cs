@@ -95,12 +95,12 @@ namespace obraz
                         }
                     }
 
-                    MessageBox.Show($"Obraz zapisany pomyœlnie: {filePath}");
+                    MessageBox.Show($"img saved: {filePath}");
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("B³¹d podczas zapisywania obrazu: " + ex.Message);
+                MessageBox.Show("errpr when saveing: " + ex.Message);
             }
         }
 
@@ -512,13 +512,13 @@ namespace obraz
         {
             if (pictureBox1.Image == null)
             {
-                MessageBox.Show("Najpierw wczytaj obraz.");
+                MessageBox.Show("first load img");
                 return;
             }
 
             Form kernelForm = new Form
             {
-                Text = "WprowadŸ maskê splotu (np. 3x3, wartoœci oddzielone spacjami, wiersze enterami)",
+                Text = "Enter the convolution mask values separated by spaces, rows by Enter",
                 Width = 400,
                 Height = 300
             };
@@ -534,7 +534,7 @@ namespace obraz
 
             Button applyButton = new Button
             {
-                Text = "Zastosuj",
+                Text = "applay",
                 Dock = DockStyle.Bottom
             };
 
@@ -549,7 +549,7 @@ namespace obraz
                     int size = rows.Length;
                     if (size % 2 == 0 || size < 3)
                     {
-                        MessageBox.Show("Rozmiar maski musi byæ nieparzysty i wiêkszy lub równy 3.");
+                        MessageBox.Show("The mask size must be odd and greater than or equal to 3.");
                         return;
                     }
 
@@ -560,7 +560,7 @@ namespace obraz
                         string[] values = rows[i].Trim().Split(' ', StringSplitOptions.RemoveEmptyEntries);
                         if (values.Length != size)
                         {
-                            MessageBox.Show("Maska musi byæ kwadratowa!");
+                            MessageBox.Show("The mask must be square!");
                             return;
                         }
 
@@ -575,7 +575,7 @@ namespace obraz
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("B³¹d podczas parsowania maski: " + ex.Message);
+                    MessageBox.Show("parsing mask error" + ex.Message);
                 }
             };
 
@@ -611,6 +611,23 @@ namespace obraz
         private void cannyToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Gradient.ApplyCannyEdgeDetection(pictureBox1, pictureBox2);
+        }
+
+        private void manulTresholdingToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ManualThresholding.Apply(pictureBox1, pictureBox2, 150);
+        }
+
+
+
+        private void iterativeThresholdingToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (pictureBox1.Image != null)
+            {
+                Bitmap input = new Bitmap(pictureBox1.Image);
+                Bitmap result = IterativeThresholding.Apply(input);
+                pictureBox2.Image = result;
+            }
         }
     }
 
