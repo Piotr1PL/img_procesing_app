@@ -58,6 +58,9 @@
             laplaceZeroToolStripMenuItem = new ToolStripMenuItem();
             tresholdingToolStripMenuItem = new ToolStripMenuItem();
             manulTresholdingToolStripMenuItem = new ToolStripMenuItem();
+            iterativeThresholdingToolStripMenuItem = new ToolStripMenuItem();
+            houghTransformForLinesToolStripMenuItem = new ToolStripMenuItem();
+            watershedSegmentationToolStripMenuItem = new ToolStripMenuItem();
             pictureBox1 = new PictureBox();
             pictureBox2 = new PictureBox();
             trackBarBrightness = new TrackBar();
@@ -66,7 +69,6 @@
             textBox1 = new TextBox();
             textBox2 = new TextBox();
             textBox3 = new TextBox();
-            iterativeThresholdingToolStripMenuItem = new ToolStripMenuItem();
             menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
@@ -78,7 +80,7 @@
             // menuStrip1
             // 
             menuStrip1.ImageScalingSize = new Size(24, 24);
-            menuStrip1.Items.AddRange(new ToolStripItem[] { fileToolStripMenuItem, negativeGreyScaleToolStripMenuItem, correctionToolStripMenuItem, histogramToolStripMenuItem, convolutionToolStripMenuItem, transformationsToolStripMenuItem, tresholdingToolStripMenuItem });
+            menuStrip1.Items.AddRange(new ToolStripItem[] { fileToolStripMenuItem, negativeGreyScaleToolStripMenuItem, correctionToolStripMenuItem, histogramToolStripMenuItem, convolutionToolStripMenuItem, transformationsToolStripMenuItem, tresholdingToolStripMenuItem, houghTransformForLinesToolStripMenuItem, watershedSegmentationToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
             menuStrip1.Size = new Size(1358, 33);
@@ -282,22 +284,42 @@
             manulTresholdingToolStripMenuItem.Text = "Manul Tresholding";
             manulTresholdingToolStripMenuItem.Click += manulTresholdingToolStripMenuItem_Click;
             // 
+            // iterativeThresholdingToolStripMenuItem
+            // 
+            iterativeThresholdingToolStripMenuItem.Name = "iterativeThresholdingToolStripMenuItem";
+            iterativeThresholdingToolStripMenuItem.Size = new Size(280, 34);
+            iterativeThresholdingToolStripMenuItem.Text = "IterativeThresholding";
+            iterativeThresholdingToolStripMenuItem.Click += iterativeThresholdingToolStripMenuItem_Click;
+            // 
+            // houghTransformForLinesToolStripMenuItem
+            // 
+            houghTransformForLinesToolStripMenuItem.Name = "houghTransformForLinesToolStripMenuItem";
+            houghTransformForLinesToolStripMenuItem.Size = new Size(235, 29);
+            houghTransformForLinesToolStripMenuItem.Text = "Hough Transform for lines";
+            houghTransformForLinesToolStripMenuItem.Click += houghTransformForLinesToolStripMenuItem_Click;
+            // 
+            // watershedSegmentationToolStripMenuItem
+            // 
+            watershedSegmentationToolStripMenuItem.Name = "watershedSegmentationToolStripMenuItem";
+            watershedSegmentationToolStripMenuItem.Size = new Size(226, 29);
+            watershedSegmentationToolStripMenuItem.Text = "Watershed segmentation";
+            // 
             // pictureBox1
             // 
+            pictureBox1.BorderStyle = BorderStyle.Fixed3D;
             pictureBox1.Location = new Point(0, 90);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(512, 512);
-            pictureBox1.SizeMode = PictureBoxSizeMode.AutoSize;
             pictureBox1.TabIndex = 1;
             pictureBox1.TabStop = false;
             pictureBox1.Click += PictureBox1_Click;
             // 
             // pictureBox2
             // 
+            pictureBox2.BorderStyle = BorderStyle.Fixed3D;
             pictureBox2.Location = new Point(531, 90);
             pictureBox2.Name = "pictureBox2";
             pictureBox2.Size = new Size(512, 512);
-            pictureBox2.SizeMode = PictureBoxSizeMode.AutoSize;
             pictureBox2.TabIndex = 2;
             pictureBox2.TabStop = false;
             pictureBox2.Click += pictureBox2_Click;
@@ -349,13 +371,6 @@
             textBox3.Size = new Size(150, 31);
             textBox3.TabIndex = 8;
             textBox3.TextChanged += textBox3_TextChanged;
-            // 
-            // iterativeThresholdingToolStripMenuItem
-            // 
-            iterativeThresholdingToolStripMenuItem.Name = "iterativeThresholdingToolStripMenuItem";
-            iterativeThresholdingToolStripMenuItem.Size = new Size(280, 34);
-            iterativeThresholdingToolStripMenuItem.Text = "IterativeThresholding";
-            iterativeThresholdingToolStripMenuItem.Click += iterativeThresholdingToolStripMenuItem_Click;
             // 
             // Form1
             // 
@@ -427,5 +442,7 @@
         private ToolStripMenuItem tresholdingToolStripMenuItem;
         private ToolStripMenuItem manulTresholdingToolStripMenuItem;
         private ToolStripMenuItem iterativeThresholdingToolStripMenuItem;
+        private ToolStripMenuItem houghTransformForLinesToolStripMenuItem;
+        private ToolStripMenuItem watershedSegmentationToolStripMenuItem;
     }
 }

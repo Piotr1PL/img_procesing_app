@@ -629,6 +629,11 @@ namespace obraz
                 pictureBox2.Image = result;
             }
         }
+
+        private void houghTransformForLinesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Hougha.Run(pictureBox1, pictureBox2);
+        }
     }
 
 

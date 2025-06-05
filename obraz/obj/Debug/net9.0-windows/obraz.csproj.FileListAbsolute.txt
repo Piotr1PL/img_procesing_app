@@ -18,3 +18,4 @@ C:\Users\Kocio\Desktop\img_procesing_app-main\obraz\obj\Debug\net9.0-windows\ref
 C:\Users\Kocio\Desktop\img_procesing_app-main\obraz\obj\Debug\net9.0-windows\obraz.pdb
 C:\Users\Kocio\Desktop\img_procesing_app-main\obraz\obj\Debug\net9.0-windows\obraz.genruntimeconfig.cache
 C:\Users\Kocio\Desktop\img_procesing_app-main\obraz\obj\Debug\net9.0-windows\ref\obraz.dll
+C:\Users\Kocio\Desktop\img_procesing_app-main\obraz\obj\Debug\net9.0-windows\obraz.Properties.Resources.resources
