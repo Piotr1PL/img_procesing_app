@@ -301,8 +301,9 @@
             // watershedSegmentationToolStripMenuItem
             // 
             watershedSegmentationToolStripMenuItem.Name = "watershedSegmentationToolStripMenuItem";
-            watershedSegmentationToolStripMenuItem.Size = new Size(226, 29);
-            watershedSegmentationToolStripMenuItem.Text = "Watershed segmentation";
+            watershedSegmentationToolStripMenuItem.Size = new Size(191, 29);
+            watershedSegmentationToolStripMenuItem.Text = "WatershedTransform";
+            watershedSegmentationToolStripMenuItem.Click += watershedSegmentationToolStripMenuItem_Click;
             // 
             // pictureBox1
             // 

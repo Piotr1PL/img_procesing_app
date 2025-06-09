@@ -9,7 +9,7 @@ using static obraz.PpmLoader;
 using static obraz.Negative;
 using static obraz.Greyscale;
 using static obraz.GammaCorrection;
-
+using static obraz.WatershedTransform;
 namespace obraz
 {
     public partial class Form1 : Form
@@ -633,6 +633,12 @@ namespace obraz
         private void houghTransformForLinesToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Hougha.Run(pictureBox1, pictureBox2);
+        }
+
+        private void watershedSegmentationToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            WatershedTransform.Run(pictureBox1, pictureBox2, threshold: 100);
+
         }
     }
 

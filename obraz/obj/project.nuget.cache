@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "vOa+ozhwsbE=",
+  "dgSpecHash": "4CSUO7DIlU0=",
   "success": true,
-  "projectFilePath": "C:\\Users\\Kocio\\Desktop\\img_procesing_app-main\\obraz\\obraz.csproj",
+  "projectFilePath": "C:\\Users\\Kocio\\Desktop\\onraz\\img_procesing_app\\obraz\\obraz.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Kocio\\.nuget\\packages\\winforms.datavisualization\\1.10.0\\winforms.datavisualization.1.10.0.nupkg.sha512"
   ],

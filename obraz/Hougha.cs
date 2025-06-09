@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
 
@@ -15,33 +14,30 @@ namespace obraz
                 return;
             }
 
-            // Krok 1: Skala szarości
-            new Greyscale(inputBox, outputBox);
+            Bitmap source = new Bitmap(inputBox.Image);
+            int width = source.Width;
+            int height = source.Height;
 
-            // Krok 2: Filtr Laplace’a na wyniku Greyscale
-            Gradient.ApplyLaplacianFilter(outputBox, outputBox);
-
-            // Krok 3: Transformacja Hougha (klasyczna) – detekcja linii
-            Bitmap edgeImage = new Bitmap(outputBox.Image);
-            int width = edgeImage.Width;
-            int height = edgeImage.Height;
+            PictureBox tempBox = new PictureBox { Image = (Bitmap)source.Clone() };
+            new Greyscale(tempBox, tempBox);
+            Gradient.ApplyLaplacianFilter(tempBox, tempBox);
+            Bitmap edgeImage = new Bitmap(tempBox.Image);
 
             int diagonal = (int)Math.Ceiling(Math.Sqrt(width * width + height * height));
             int[,] accumulator = new int[2 * diagonal, 180];
 
-            // Przejście po pikselach i uzupełnianie akumulatora
             for (int y = 0; y < height; y++)
             {
                 for (int x = 0; x < width; x++)
                 {
                     Color color = edgeImage.GetPixel(x, y);
-                    if (color.R > 128) // Próg - Laplacian daje białe linie
+                    if (color.R > 128)
                     {
                         for (int theta = 0; theta < 180; theta++)
                         {
                             double radians = theta * Math.PI / 180.0;
                             int r = (int)(x * Math.Cos(radians) + y * Math.Sin(radians));
-                            r += diagonal; // przesunięcie żeby uniknąć ujemnych indeksów
+                            r += diagonal;
                             if (r >= 0 && r < 2 * diagonal)
                                 accumulator[r, theta]++;
                         }
@@ -49,59 +45,36 @@ namespace obraz
                 }
             }
 
-            // Krok 4: Znalezienie linii o największej liczbie głosów
-            List<(int r, int theta)> lines = new List<(int r, int theta)>();
-            int threshold = 100; // można dobrać doświadczalnie
+            int accWidth = 180;
+            int accHeight = 2 * diagonal;
+            Bitmap spectrum = new Bitmap(accWidth, accHeight);
+            int maxVal = 0;
 
-            for (int r = 0; r < 2 * diagonal; r++)
+            for (int r = 0; r < accHeight; r++)
+                for (int t = 0; t < accWidth; t++)
+                    if (accumulator[r, t] > maxVal)
+                        maxVal = accumulator[r, t];
+
+            double brightnessBoost = 1.5; // <--- Wzmocnienie jasności
+
+            for (int r = 0; r < accHeight; r++)
             {
-                for (int theta = 0; theta < 180; theta++)
+                for (int t = 0; t < accWidth; t++)
                 {
-                    if (accumulator[r, theta] > threshold)
-                    {
-                        lines.Add((r - diagonal, theta));
-                    }
+                    int value = (int)(brightnessBoost * 255.0 * accumulator[r, t] / maxVal);
+                    value = Math.Min(255, value);
+                    spectrum.SetPixel(t, r, Color.FromArgb(value, value, value));
                 }
             }
 
-            // Krok 5: Rysowanie wykrytych linii na kopii oryginału
-            Bitmap result = new Bitmap(inputBox.Image);
-            using (Graphics g = Graphics.FromImage(result))
+            Bitmap resizedSpectrum = new Bitmap(width, height);
+            using (Graphics g = Graphics.FromImage(resizedSpectrum))
             {
-                Pen pen = new Pen(Color.Red, 1);
-
-                foreach (var (r, theta) in lines)
-                {
-                    double radians = theta * Math.PI / 180.0;
-                    double cosT = Math.Cos(radians);
-                    double sinT = Math.Sin(radians);
-
-                    // punkty przecięcia linii z krawędziami obrazu
-                    Point pt1 = new Point();
-                    Point pt2 = new Point();
-
-                    if (sinT != 0)
-                    {
-                        pt1.X = 0;
-                        pt1.Y = (int)(r / sinT);
-
-                        pt2.X = width;
-                        pt2.Y = (int)((r - width * cosT) / sinT);
-                    }
-                    else
-                    {
-                        pt1.X = (int)(r / cosT);
-                        pt1.Y = 0;
-
-                        pt2.X = (int)(r / cosT);
-                        pt2.Y = height;
-                    }
-
-                    g.DrawLine(pen, pt1, pt2);
-                }
+                g.InterpolationMode = System.Drawing.Drawing2D.InterpolationMode.HighQualityBicubic;
+                g.DrawImage(spectrum, new Rectangle(0, 0, width, height));
             }
 
-            outputBox.Image = result;
+            outputBox.Image = resizedSpectrum;
         }
     }
 }
