@@ -11,7 +11,7 @@ namespace obraz
         private const int UNLABELLED = -2;
         private const int WSHED = 0;
 
-        public static void Run(PictureBox inputBox, PictureBox outputBox, int threshold = 90)
+        public static void Run(PictureBox inputBox, PictureBox outputBox, int binThreshold = 90)
         {
             if (inputBox.Image == null)
             {
@@ -26,36 +26,32 @@ namespace obraz
             int[,] labels = new int[width, height];
             int nextLabel = 1;
 
-            // Binaryzacja (łagodniejsza)
+            // Binarizacja
             for (int y = 0; y < height; y++)
                 for (int x = 0; x < width; x++)
                 {
                     int g = blurred.GetPixel(x, y).R;
-                    if (g < threshold)
-                        labels[x, y] = BACKGROUND;
-                    else
-                        labels[x, y] = UNLABELLED;
+                    labels[x, y] = (g < binThreshold) ? BACKGROUND : UNLABELLED;
                 }
 
-            // Segmentacja przez flood fill
+            // Segmentacja flood fill
             for (int y = 0; y < height; y++)
                 for (int x = 0; x < width; x++)
-                {
                     if (labels[x, y] == UNLABELLED)
                         FloodFill(blurred, labels, x, y, nextLabel++);
-                }
 
-            // Watershed przez relabeling sąsiedztwa
+            // Tworzenie listy pikseli posortowanych po intensywności
             var pixels = new List<(int x, int y, int val)>();
             for (int y = 0; y < height; y++)
                 for (int x = 0; x < width; x++)
                     pixels.Add((x, y, blurred.GetPixel(x, y).R));
             pixels.Sort((a, b) => a.val.CompareTo(b.val));
 
+            // Relabelowanie
             foreach (var (x, y, _) in pixels)
                 RelabelNeighborhood(labels, x, y);
 
-            // Wizualizacja w odcieniach szarości jak na stronie Fraktala
+            // Wizualizacja
             Bitmap result = new Bitmap(width, height);
             Dictionary<int, byte> regionShades = new Dictionary<int, byte>();
             int shadeStep = 255 / (nextLabel + 1);
@@ -68,9 +64,9 @@ namespace obraz
                     byte g;
 
                     if (lbl == BACKGROUND)
-                        g = 255; // biały
+                        g = 255;
                     else if (lbl == WSHED)
-                        g = 0; // czarny – linie podziału
+                        g = 0;
                     else
                     {
                         if (!regionShades.ContainsKey(lbl))
@@ -94,7 +90,7 @@ namespace obraz
                 for (int x = 0; x < bmp.Width; x++)
                 {
                     Color c = bmp.GetPixel(x, y);
-                    int g = (c.R + c.G + c.B) / 3;
+                    int g = (int)(0.3 * c.R + 0.59 * c.G + 0.11 * c.B);
                     gray.SetPixel(x, y, Color.FromArgb(g, g, g));
                 }
             return gray;
@@ -104,6 +100,7 @@ namespace obraz
         {
             Bitmap dest = new Bitmap(src.Width, src.Height);
             int r = size / 2;
+
             for (int y = 0; y < src.Height; y++)
                 for (int x = 0; x < src.Width; x++)
                 {
@@ -120,6 +117,7 @@ namespace obraz
                     int median = values[values.Count / 2];
                     dest.SetPixel(x, y, Color.FromArgb(median, median, median));
                 }
+
             return dest;
         }
 
@@ -131,13 +129,19 @@ namespace obraz
             q.Enqueue((x, y));
             labels[x, y] = label;
 
-            var dirs = new (int dx, int dy)[] { (1, 0), (-1, 0), (0, 1), (0, -1) };
+            int[][] dirs = new int[][] {
+                new int[] {1, 0},
+                new int[] {-1, 0},
+                new int[] {0, 1},
+                new int[] {0, -1}
+            };
+
             while (q.Count > 0)
             {
                 var (cx, cy) = q.Dequeue();
-                foreach (var (dx, dy) in dirs)
+                foreach (var dir in dirs)
                 {
-                    int nx = cx + dx, ny = cy + dy;
+                    int nx = cx + dir[0], ny = cy + dir[1];
                     if (nx >= 0 && ny >= 0 && nx < width && ny < height &&
                         labels[nx, ny] == UNLABELLED && gray.GetPixel(nx, ny).R == target)
                     {
@@ -152,12 +156,18 @@ namespace obraz
         {
             int width = labels.GetLength(0), height = labels.GetLength(1);
             int current = labels[x, y];
-            var dirs = new (int dx, int dy)[] { (1, 0), (-1, 0), (0, 1), (0, -1) };
             int newLabel = current;
 
-            foreach (var (dx, dy) in dirs)
+            int[][] dirs = new int[][] {
+                new int[] {1, 0},
+                new int[] {-1, 0},
+                new int[] {0, 1},
+                new int[] {0, -1}
+            };
+
+            foreach (var dir in dirs)
             {
-                int nx = x + dx, ny = y + dy;
+                int nx = x + dir[0], ny = y + dir[1];
                 if (nx >= 0 && ny >= 0 && nx < width && ny < height)
                 {
                     int neighbor = labels[nx, ny];

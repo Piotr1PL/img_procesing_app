@@ -69,6 +69,7 @@
             textBox1 = new TextBox();
             textBox2 = new TextBox();
             textBox3 = new TextBox();
+            harrisAlgorythmToolStripMenuItem = new ToolStripMenuItem();
             menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
@@ -300,6 +301,7 @@
             // 
             // watershedSegmentationToolStripMenuItem
             // 
+            watershedSegmentationToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { harrisAlgorythmToolStripMenuItem });
             watershedSegmentationToolStripMenuItem.Name = "watershedSegmentationToolStripMenuItem";
             watershedSegmentationToolStripMenuItem.Size = new Size(191, 29);
             watershedSegmentationToolStripMenuItem.Text = "WatershedTransform";
@@ -373,6 +375,13 @@
             textBox3.TabIndex = 8;
             textBox3.TextChanged += textBox3_TextChanged;
             // 
+            // harrisAlgorythmToolStripMenuItem
+            // 
+            harrisAlgorythmToolStripMenuItem.Name = "harrisAlgorythmToolStripMenuItem";
+            harrisAlgorythmToolStripMenuItem.Size = new Size(270, 34);
+            harrisAlgorythmToolStripMenuItem.Text = "Harris algorythm";
+            harrisAlgorythmToolStripMenuItem.Click += harrisAlgorythmToolStripMenuItem_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
@@ -445,5 +454,6 @@
         private ToolStripMenuItem iterativeThresholdingToolStripMenuItem;
         private ToolStripMenuItem houghTransformForLinesToolStripMenuItem;
         private ToolStripMenuItem watershedSegmentationToolStripMenuItem;
+        private ToolStripMenuItem harrisAlgorythmToolStripMenuItem;
     }
 }
